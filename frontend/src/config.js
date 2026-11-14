@@ -1,5 +1,5 @@
 // Endereço do back-end Django publicado na Vercel.
-export const API_URL = "https://backend-eb8o.vercel.app/api/landing/";
+export const API_URL = "https://rhema-landing-page.vercel.app/api/landing/";
 
 // Usado se a API estiver fora do ar.
 export const FALLBACK = {
