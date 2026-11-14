@@ -1,0 +1,26 @@
+
+# Dependências
+node_modules/
+frontend/node_modules/
+backend/venv/
+venv/
+__pycache__/
+
+# Ambiente virtual
+.env
+.env.*
+
+# Banco de dados local
+backend/db.sqlite3
+
+# Arquivos temporários
+*.log
+.DS_Store
+
+# Expo
+.expo/
+frontend/.expo/
+frontend/dist/
+
+# Arquivos Python
+*.pyc

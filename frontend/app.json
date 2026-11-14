@@ -1,0 +1,2 @@
+{ "expo": { "name": "Rhema", "slug": "rhema-site", "version": "1.0.0", "icon": "./assets/logo.png",
+  "web": { "bundler": "metro", "output": "single", "favicon": "./assets/logo.png" } } }

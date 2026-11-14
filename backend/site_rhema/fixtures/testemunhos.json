@@ -1,0 +1,5 @@
+[
+  {"model": "site_rhema.testemunho", "pk": 1, "fields": {"nome_aluno": "Yuri e Rauany", "titulo": "Testemunho de aluno", "video_url": "https://www.instagram.com/reel/DUs1Ma2EQ_r/", "ordem": 1, "ativo": true}},
+  {"model": "site_rhema.testemunho", "pk": 2, "fields": {"nome_aluno": "Tassia Candeia", "titulo": "Testemunho de aluna", "video_url": "https://www.instagram.com/reel/DUneCiWkf0l/", "ordem": 2, "ativo": true}},
+  {"model": "site_rhema.testemunho", "pk": 3, "fields": {"nome_aluno": "Rennata", "titulo": "Testemunho de aluna", "video_url": "https://www.instagram.com/reel/DT-dzXxkjDE/", "ordem": 3, "ativo": true}}
+]
