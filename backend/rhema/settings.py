@@ -33,3 +33,4 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # Em produção, troque por o domínio do site
 CORS_ALLOW_ALL_ORIGINS = True
+WSGI_APPLICATION = "rhema.wsgi.application"
