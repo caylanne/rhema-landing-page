@@ -3,6 +3,8 @@ import { View, Text, Image, ScrollView, Pressable, Linking, Animated, Easing, us
 import { useFonts, CormorantGaramond_700Bold, CormorantGaramond_500Medium } from "@expo-google-fonts/cormorant-garamond";
 import { NunitoSans_400Regular, NunitoSans_700Bold } from "@expo-google-fonts/nunito-sans";
 import { API_URL, FALLBACK } from "./src/config";
+
+const LINK_FORM = "https://forms.gle/F7EL6ZzwxWpt521s6";
 import { cor, fonte } from "./src/theme";
 import Reveal from "./src/Reveal";
 import Testemunhos from "./src/Testemunhos";
@@ -26,13 +28,13 @@ function Botao({ texto, href, principal, desativado }) {
 
 export default function App() {
   const [ok] = useFonts({ CormorantGaramond_700Bold, CormorantGaramond_500Medium, NunitoSans_400Regular, NunitoSans_700Bold });
-  const [d, setD] = useState(FALLBACK);
+  const [d, setD] = useState({ ...FALLBACK, link_pre_matricula: LINK_FORM });
   const { width } = useWindowDimensions();
   const largo = width >= 860;
   const brilho = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
-    fetch(API_URL).then((r) => r.json()).then(setD).catch(() => {});
+    fetch(API_URL).then((r) => r.json()).then((x) => setD({ ...x, link_pre_matricula: LINK_FORM })).catch(() => {});
     // brilho lento atrás do selo
     Animated.loop(Animated.sequence([
       Animated.timing(brilho, { toValue: 1, duration: 3600, easing: Easing.inOut(Easing.sin), useNativeDriver: true }),
@@ -56,7 +58,7 @@ export default function App() {
             <Reveal delay={200}><Text style={[s.h1, { fontSize: largo ? 64 : 42, lineHeight: largo ? 68 : 46 }]}>{d.titulo}</Text></Reveal>
             <Reveal delay={900}><Text style={s.lead}>{d.mensagem}</Text></Reveal>
             <Reveal delay={1600} style={s.botoes}>
-              <Botao principal texto="Fazer pré-matrícula" href="#pre-matricula" />
+              <Botao principal texto="Fazer pré-matrícula" href={LINK_FORM} />
               <Botao texto="Falar com a escola" href={d.link_contato} desativado={!d.link_contato} />
             </Reveal>
           </View>
